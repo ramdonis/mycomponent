@@ -1,0 +1,371 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6,
+ul, ol, li,
+button,
+a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    border: none;
+}
+
+body {
+    background: white;
+}
+
+.container-grid {
+    display: grid;
+    grid-gap: 3px;
+    height: 80vh;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 300px 300px 300px; 
+    grid-template-rows: 200px 200px 200px; 
+    margin: 50px;
+    /* background: coral; */
+}
+
+.container-grid > .grid {
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 30px;
+    border: 1px solid #e5e5e5;
+}
+
+.container-grid > .grid {
+    width: 100%;
+}
+
+.no {
+    position: absolute;
+    font-size: 24px;
+    padding: 5px;
+}
+
+.container-flex{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* dropdown 1 */
+.container-dropdown{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.makanan {
+    position: relative;
+}
+
+
+.makanan button{
+    border-left: 2px solid rgb(226, 214, 43);
+    border-right: 2px solid rgb(226, 214, 43);
+    padding: 0 10px 0 10px;
+    background: none;
+    font-weight: 900;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+    color: rgb(44, 44, 44);
+}
+
+.makanan ul{
+    position: absolute;
+    background-color: rgb(206, 206, 206);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    padding: 3px;
+    top: 100%;
+}
+
+.makanan ul:after {
+    position: absolute;
+    top: -7px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgb(206, 206, 206);
+    content: '';
+    display: block;
+    z-index: 2;
+    transition: all 200ms linear;
+}
+
+.makanan button:focus + ul{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(10px);
+}
+
+.makanan li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.makanan li:hover{
+    background-color: rgb(240, 162, 162);
+    color: grey;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.makanan a{
+    color: rgb(83, 83, 83);
+    font-size: 18px;
+}
+/* dropdown 1 end */
+
+/* dropdown 2 */
+.dropdown2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    position: relative;
+}
+
+.dropdown2 > .parent{
+    font-size: 18px;
+    border-radius: 10px;
+    background: salmon;
+    color: whitesmoke;
+    padding: 10px;
+    outline: none;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.dropdown2.animate > .parent, .parent:hover{
+    background: turquoise;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dropdown2.animate > .parent + .drop{
+    transform: translateY(10px);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropdown2 .drop{
+    display: flex;
+    flex-direction: column;
+    opacity: 0; 
+    position: absolute;
+    top: 100%;
+    transform: translateY(-5px);
+    width: 100%;
+    pointer-events: none;
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown2 .drop .list{
+    font-size: 18px;
+    border-bottom: 1px solid #eaeaea;
+    padding: 10px;
+    color: whitesmoke;
+    background-color: salmon;
+    box-shadow: 5px 5px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dropdown2 .drop .list:hover{
+    background-color: turquoise;
+}
+/* dropdown 2 end */
+
+/* dropdown 3 */
+.container-dropdown3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    height: 60px;
+}
+
+.container-dropdown3 .parent{
+    background: salmon;
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container-dropdown3 .parent:hover{
+    background: turquoise;
+}
+
+.container-dropdown3 .drop{
+    position: absolute;
+    display: none;
+    background-color: salmon;
+    z-index: 999;
+    width: 110px;
+    height: fit-content;
+    border-radius: 5px;
+    top: 100%;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container-dropdown3:hover .drop{
+    display: block;
+}
+
+.container-dropdown3 .drop .list{
+    border-bottom: 1px solid #eaeaea;
+    padding: 10px;
+    color: whitesmoke;
+}
+
+.container-dropdown3 .drop .list:hover:first-child{
+    background-color: turquoise;
+    border-radius: 5px 5px 0 0;
+}
+
+.container-dropdown3 .drop .list:hover:last-child{
+    background-color: turquoise;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.container-dropdown3 .drop .list:hover{
+    background-color: turquoise;
+}
+/* dropdown 3 end */
+
+/* dropdown 4 */
+.dropdown4{
+    position: relative;
+    z-index: 99;
+}
+
+.menu button {
+    cursor: pointer;
+    color: rgb(44, 44, 44);
+    background: none;
+    font-size: 18px;
+    font-weight: 900;
+    padding: 10px 15px;
+    align-items: center;
+    height: 60px;
+}
+
+.jenis-makanan {
+    position: absolute;
+    display: none;
+    border-radius: 5px;
+    background-color: #d2691e;
+    z-index: 9999;
+    width: 100px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.6);
+    height: fit-content;
+}
+
+.jenis-makanan ul:after {
+    position: absolute;
+    top: -7px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #d2691e;
+    content: '';
+    display: block;
+    z-index: 2;
+    transition: all 200ms linear;
+}
+
+.dropdown4:hover .jenis-makanan {
+    display: block;
+}
+
+.dropdown4 .jenis-makanan ul li{
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.dropdown4 .jenis-makanan ul li:hover{
+    background: #fd944a;
+}
+
+.dropdown4 .jenis-makanan ul a{
+    color: white;
+}
+
+.dropdown4 .jenis-makanan ul li:hover:first-child{
+    border-radius: 5px 5px 0 0;
+}
+
+.dropdown4 .jenis-makanan ul li:hover:last-child{
+    border-radius: 0px 0px 5px 5px;
+}
+
+/* dropdown 4 end */
+
+@media (max-width: 575.98px){
+    .container-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        margin: 0px;
+        height: 100%;
+    }
+    .container-grid > div {
+        margin: 5px 10px 0px;
+        height: 300px;
+    }
+    .grid > img {
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 1023.9px){
+    .container-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        margin: 0px;
+        height: 100%;
+        grid-gap: 0;
+    }
+    .container.grid > .grid {
+        margin: 5px 2.5px 0px;
+        height: 300px;
+    }
+    .grid > img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+    }
+}
