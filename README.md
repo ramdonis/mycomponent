@@ -1,2 +1,2 @@
 # mycomponent
-my component collections
+this is my component collections repo
