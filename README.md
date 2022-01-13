@@ -1,0 +1,2 @@
+# mycomponent
+my component collections
